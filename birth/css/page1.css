@@ -1,0 +1,340 @@
+/* ==========================================================================
+   PAGE 1: THE MYSTERIOUS ENTRANCE
+   Theme: Cosmic Purple to Neon Pink Gradient
+   ========================================================================== */
+
+#page-1 {
+    background: radial-gradient(ellipse at 50% 45%, #2d0b4d 0%, #17042a 50%, #080113 100%);
+    overflow: hidden;
+}
+
+/* Cosmic Glow Orbs in Background */
+#page-1::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 42, 133, 0.25) 0%, rgba(155, 77, 255, 0.15) 50%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(60px);
+    pointer-events: none;
+    animation: pulseNebula 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseNebula {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.95; }
+}
+
+.page1-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+    max-width: 650px;
+    width: 100%;
+}
+
+.intro-badge {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-pink-light);
+    background: rgba(255, 42, 133, 0.15);
+    border: 1px solid rgba(255, 42, 133, 0.35);
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.page1-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-shadow: 0 0 25px rgba(255, 42, 133, 0.5),
+                 0 0 50px rgba(155, 77, 255, 0.3);
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.page1-subtitle {
+    font-size: clamp(1.1rem, 2.8vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+    margin-bottom: 35px;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* ==========================================================================
+   3D GLOWING GIFT BOX
+   ========================================================================== */
+
+.gift-box-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 20px auto 45px;
+    cursor: pointer;
+    perspective: 1000px;
+    animation: floatGiftBox 4s ease-in-out infinite;
+}
+
+@keyframes floatGiftBox {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-16px) rotate(1.5deg);
+    }
+}
+
+.gift-box-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.45) 0%, rgba(255, 42, 133, 0.3) 40%, transparent 70%);
+    filter: blur(25px);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.gift-box-wrapper:hover .gift-box-glow {
+    transform: translate(-50%, -50%) scale(1.25);
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.65) 0%, rgba(255, 42, 133, 0.5) 45%, transparent 70%);
+}
+
+.gift-box-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* Box Body */
+.box-body {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 180px;
+    height: 140px;
+    background: linear-gradient(135deg, #e01e69 0%, #a21256 50%, #680537 100%);
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(255, 42, 133, 0.4),
+                inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+}
+
+/* Golden Vertical & Horizontal Ribbons */
+.ribbon-vertical {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 100%;
+    background: linear-gradient(90deg, #d97706, #ffd700 50%, #b45309);
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.25), 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.ribbon-horizontal {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 28px;
+    background: linear-gradient(180deg, #ffd700, #b45309);
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
+}
+
+/* Box Lid with 3D Flip capability */
+.box-lid {
+    position: absolute;
+    top: 52px;
+    left: 10px;
+    width: 200px;
+    height: 44px;
+    background: linear-gradient(135deg, #f02575 0%, #b81662 50%, #850742 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(255, 42, 133, 0.5),
+                inset 0 3px 6px rgba(255, 255, 255, 0.5);
+    z-index: 5;
+    transform-origin: top center;
+    transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.3),
+                opacity 0.6s ease;
+}
+
+.box-lid .ribbon-vertical {
+    height: 100%;
+}
+
+/* 3D Golden Bow on Top */
+.gift-bow {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 38px;
+    z-index: 6;
+}
+
+.bow-loop-left, .bow-loop-right {
+    position: absolute;
+    top: 6px;
+    width: 32px;
+    height: 28px;
+    border: 6px solid #ffd700;
+    border-radius: 50% 50% 0 50%;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.bow-loop-left {
+    left: 6px;
+    transform: rotate(-35deg);
+}
+
+.bow-loop-right {
+    right: 6px;
+    transform: rotate(35deg) scaleX(-1);
+}
+
+.bow-knot {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #ffe66d, #d97706);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Bursting Light Inside Gift Box */
+.box-inner-light {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, #ffffff 0%, #fff7a1 25%, #ffbe0b 50%, rgba(255, 42, 133, 0.4) 75%, transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(15px);
+    transition: transform 0.8s cubic-bezier(0.1, 0.9, 0.2, 1), opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* Light Rays Burst */
+.burst-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 400px;
+    height: 400px;
+    background: conic-gradient(from 0deg, transparent 0deg, rgba(255, 230, 109, 0.4) 20deg, transparent 40deg, rgba(255, 230, 109, 0.4) 60deg, transparent 80deg, rgba(255, 230, 109, 0.4) 100deg, transparent 120deg, rgba(255, 230, 109, 0.4) 140deg, transparent 160deg, rgba(255, 230, 109, 0.4) 180deg, transparent 200deg, rgba(255, 230, 109, 0.4) 220deg, transparent 240deg, rgba(255, 230, 109, 0.4) 260deg, transparent 280deg, rgba(255, 230, 109, 0.4) 300deg, transparent 320deg, rgba(255, 230, 109, 0.4) 340deg, transparent 360deg);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(10px);
+    animation: rotateRays 12s linear infinite;
+    transition: transform 0.9s cubic-bezier(0.1, 0.9, 0.2, 1), opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+@keyframes rotateRays {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Open State Animations */
+.gift-box-wrapper.opened .box-lid {
+    transform: translateY(-80px) rotateX(-120deg) scale(0.9);
+    opacity: 0.85;
+}
+
+.gift-box-wrapper.opened .box-inner-light {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 1;
+}
+
+.gift-box-wrapper.opened .burst-rays {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0.9;
+}
+
+.gift-box-wrapper.opened {
+    animation: boxBounceOpen 0.6s ease-out;
+}
+
+@keyframes boxBounceOpen {
+    0% { transform: translateY(0) scale(1); }
+    40% { transform: translateY(-20px) scale(1.08); }
+    100% { transform: translateY(0) scale(1.02); }
+}
+
+/* ==========================================================================
+   ANIMATION KEYFRAMES
+   ========================================================================== */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .gift-box-wrapper {
+        width: 180px;
+        height: 180px;
+        margin: 15px auto 35px;
+    }
+    .box-body {
+        left: 15px;
+        width: 150px;
+        height: 120px;
+    }
+    .box-lid {
+        left: 5px;
+        width: 170px;
+        height: 38px;
+    }
+}

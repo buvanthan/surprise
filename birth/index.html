@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shalini’s Birthday Surprise ✨</title>
+    <meta name="description"
+        content="A magical, emotional and playful interactive 5-page birthday surprise dedicated to Shalini!">
+
+    <!-- Favicon (Sparkle & Cake Emoji) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/page1.css">
+    <link rel="stylesheet" href="css/page2.css">
+    <link rel="stylesheet" href="css/page3.css">
+    <link rel="stylesheet" href="css/page4.css">
+    <link rel="stylesheet" href="css/page5.css">
+</head>
+
+<body>
+
+    <!-- Stars & Celestial Dust Container -->
+    <div id="stars-container"></div>
+
+    <!-- Global Persistent Header -->
+    <header class="global-header">
+        <div class="progress-indicator" id="progress-text" title="Surprise Progress">
+            ✦ 1 / 5 ✦
+        </div>
+
+        <button class="sound-toggle-btn" id="sound-toggle-btn" aria-label="Toggle Sound Effects & Music">
+            <span id="sound-icon">🎵</span>
+            <span id="sound-label">Music: OFF</span>
+        </button>
+    </header>
+
+    <!-- Side Interactive Party Poppers (Left & Right) -->
+    <div class="side-popper left" id="popper-trigger-left" title="Click to pop confetti!">
+        <div class="popper-sparkles-top">✨</div>
+        <div class="popper-cone"></div>
+    </div>
+    <div class="side-popper right" id="popper-trigger-right" title="Click to pop confetti!">
+        <div class="popper-sparkles-top">🎉</div>
+        <div class="popper-cone"></div>
+    </div>
+
+    <!-- Main Container Holding All 5 Pages -->
+    <main id="app-container">
+
+        <!-- ====================================================================
+             PAGE 1: THE MYSTERIOUS ENTRANCE
+             ==================================================================== -->
+        <section id="page-1" class="page-section active" aria-label="Page 1 - The Mysterious Entrance">
+            <div class="page1-content">
+                <div class="intro-badge">
+                    <span>✨</span> Something special is waiting…
+                </div>
+
+                <h1 class="page1-title">Hey Shalini Aka… 👀</h1>
+                <p class="page1-subtitle">I have a little surprise for you…</p>
+
+                <!-- Floating Glowing 3D Gift Box -->
+                <div class="gift-box-wrapper" id="gift-box" title="Click me to open!">
+                    <div class="gift-box-glow"></div>
+                    <div class="burst-rays"></div>
+                    <div class="box-inner-light"></div>
+
+                    <div class="gift-box-container">
+                        <!-- Bow -->
+                        <div class="gift-bow">
+                            <div class="bow-loop-left"></div>
+                            <div class="bow-loop-right"></div>
+                            <div class="bow-knot"></div>
+                        </div>
+
+                        <!-- Lid -->
+                        <div class="box-lid">
+                            <div class="ribbon-vertical"></div>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="box-body">
+                            <div class="ribbon-vertical"></div>
+                            <div class="ribbon-horizontal"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="magic-btn" id="open-surprise-btn">
+                    OPEN YOUR SURPRISE 🎁
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ====================================================================
+             PAGE 2: THE BIG BIRTHDAY REVEAL
+             ==================================================================== -->
+        <section id="page-2" class="page-section" aria-label="Page 2 - The Big Birthday Reveal">
+            <!-- Floating Balloons Container -->
+            <div id="balloons-container"></div>
+
+            <div class="page2-content">
+                <div class="birthday-badge">
+                    🎉 A VERY SPECIAL DAY 🎉
+                </div>
+
+                <h1 class="birthday-main-title">
+                    🎉 HAPPY BIRTHDAY SHALINI AKA! 🎉
+                </h1>
+
+                <h2 class="sister-dedication">
+                    To the most amazing college sister… 💖
+                </h2>
+
+                <!-- Glassmorphism Card with Orbiting Hearts -->
+                <div class="glass-card-wrapper">
+                    <!-- Orbiting Hearts -->
+                    <div class="orbiting-heart h1">💖</div>
+                    <div class="orbiting-heart h2">✨</div>
+                    <div class="orbiting-heart h3">🌸</div>
+                    <div class="orbiting-heart h4">💫</div>
+
+                    <div class="birthday-glass-card">
+                        <div class="card-quote-icon">“</div>
+                        <p class="card-message-text">
+                            Today is not just another day…<br>
+                            It’s the day someone <span class="highlight">truly special</span> came into this world.
+                        </p>
+                    </div>
+                </div>
+
+                <button class="magic-btn gold-theme" id="page2-next-btn">
+                    WAIT… THERE’S MORE →
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ====================================================================
+             PAGE 3: OUR COLLEGE MEMORIES
+             ==================================================================== -->
+        <section id="page-3" class="page-section" aria-label="Page 3 - Our College Memories">
+            <div class="page3-content">
+                <header class="scrapbook-header">
+                    <div class="scrapbook-badge">
+                        📸 SCRAPBOOK OF MEMORIES
+                    </div>
+                    <h1 class="scrapbook-title">
+                        Some people become memories…<br>
+                        Some become family. 💜
+                    </h1>
+                    <h2 class="scrapbook-subtitle">
+                        And you became both.
+                    </h2>
+                </header>
+
+                <!-- Floating Scrapbook Memory Cards Grid -->
+                <!-- Photos & Text can be edited in js/memories-data.js -->
+                <div class="memories-grid-container" id="memories-grid">
+                    <!-- Dynamically populated by js/memories-data.js -->
+                </div>
+
+                <footer class="page3-footer">
+                    <p class="page3-teaser-text">
+                        But our story doesn’t end here… ✨
+                    </p>
+                    <button class="magic-btn page3-magic-btn" id="page3-next-btn">
+                        ONE MORE SURPRISE ✨
+                    </button>
+                </footer>
+            </div>
+        </section>
+
+
+        <!-- ====================================================================
+             PAGE 4: THE EMOTIONAL MESSAGE
+             ==================================================================== -->
+        <section id="page-4" class="page-section" aria-label="Page 4 - The Emotional Message">
+            <div class="celestial-aura"></div>
+
+            <div class="page4-content">
+                <!-- Glowing Pulsing Golden Heart -->
+                <div class="emotional-heart-wrapper" id="emotional-heart" title="Click to send love!">
+                    <div class="emotional-heart-glow"></div>
+                    <div class="emotional-heart">💛</div>
+                </div>
+
+                <h1 class="page4-heading">
+                    Shalini Aka, there’s something I want you to know…
+                </h1>
+
+                <!-- Letter Box with Cinematic Fade-in Lines -->
+                <div class="letter-box">
+                    <p class="typewriter-line">
+                        College gave me many memories,
+                    </p>
+                    <p class="typewriter-line">
+                        but one of the best things it gave me<br>
+                        was a sister like you.
+                    </p>
+                    <p class="typewriter-line">
+                        Through all the random conversations,
+                    </p>
+                    <p class="typewriter-line">
+                        the laughter,<br>
+                        the chaos,
+                    </p>
+                    <p class="typewriter-line">
+                        the unforgettable moments,<br>
+                        and all those little things…
+                    </p>
+                    <p class="typewriter-line highlight">
+                        you became someone truly special. 💫
+                    </p>
+                    <p class="typewriter-line">
+                        I’m really lucky to have you in my life Aka.
+                    </p>
+                    <p class="typewriter-line closing-smile">
+                        And today, I just want to see you smile. ❤️
+                    </p>
+                </div>
+
+                <!-- Next Action Prompt -->
+                <div class="page4-actions-container" id="page4-actions">
+                    <p class="page4-teaser-question">
+                        Ready for the FINAL SURPRISE? 👀
+                    </p>
+                    <button class="magic-btn royal-gold-btn" id="page4-next-btn">
+                        YES, SHOW ME! 🎁
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================================
+             PAGE 5: THE GRAND FINALE
+             ==================================================================== -->
+        <section id="page-5" class="page-section" aria-label="Page 5 - The Grand Finale">
+            <div class="page5-content">
+                <div class="finale-badge">
+                    🌈 CELEBRATING YOU TODAY & FOREVER
+                </div>
+
+                <h1 class="finale-title">
+                    🎂 HAPPY BIRTHDAY SHALINI AKA! 🎂
+                </h1>
+
+                <h2 class="finale-affirmation">
+                    Keep smiling. Keep shining. Keep being YOU. ✨
+                </h2>
+
+                <p class="finale-blessing">
+                    Here’s to another beautiful year filled with happiness, laughter,
+                    success, adventures and unforgettable memories! 💖
+                </p>
+
+                <!-- Glowing 3-Tier Birthday Cake with Animated Candles -->
+                <div class="cake-stage" id="birthday-cake">
+                    <div class="cake-glow"></div>
+
+                    <!-- 3 Flickering Candles -->
+                    <div class="candles-group">
+                        <div class="candle-item">
+                            <div class="candle-flame"></div>
+                            <div class="candle-smoke"></div>
+                            <div class="candle-wick"></div>
+                            <div class="candle-stick"></div>
+                        </div>
+                        <div class="candle-item">
+                            <div class="candle-flame"></div>
+                            <div class="candle-smoke"></div>
+                            <div class="candle-wick"></div>
+                            <div class="candle-stick"></div>
+                        </div>
+                        <div class="candle-item">
+                            <div class="candle-flame"></div>
+                            <div class="candle-smoke"></div>
+                            <div class="candle-wick"></div>
+                            <div class="candle-stick"></div>
+                        </div>
+                    </div>
+
+                    <!-- Top Tier -->
+                    <div class="cake-tier cake-tier-top">
+                        <div class="frosting-drip"></div>
+                    </div>
+
+                    <!-- Middle Tier -->
+                    <div class="cake-tier cake-tier-middle">
+                        <div class="frosting-drip"></div>
+                    </div>
+
+                    <!-- Bottom Tier -->
+                    <div class="cake-tier cake-tier-bottom">
+                        <div class="frosting-drip"></div>
+                    </div>
+
+                    <!-- Cake Plate Base -->
+                    <div class="cake-plate"></div>
+                </div>
+
+                <!-- Make a Wish Button -->
+                <button class="magic-btn make-wish-btn" id="make-wish-btn">
+                    MAKE A WISH ✨
+                </button>
+
+                <!-- Revealed Box (Appears after blowing candles) -->
+                <div class="wish-reveal-box" id="wish-reveal-box">
+                    <p class="wish-blessing-text">
+                        “May every wish you make today<br>
+                        find its way to you.” 💫
+                    </p>
+                    <p class="wish-birthday-shout">
+                        Happy Birthday, Shalini Aka ❤️
+                    </p>
+                    <p class="wish-signature">
+                        — From your college brother😄
+                    </p>
+                </div>
+
+                <!-- Extra Celebration Buttons -->
+                <div class="finale-button-group">
+                    <button class="secondary-celebrate-btn" id="pop-more-btn">
+                        Pop More Confetti 🎉
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Modal for Memory Card Details (Page 3) -->
+    <div class="modal-backdrop" id="memory-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+
+            <div class="modal-image-container">
+                <img id="modal-image" src="" alt="Memory Image">
+            </div>
+
+            <div class="modal-content">
+                <span class="modal-tag" id="modal-tag">Campus Vibes</span>
+                <h3 class="modal-title" id="modal-title">College Days</h3>
+                <p class="modal-story" id="modal-story">Memory story goes here...</p>
+                <div class="modal-quote" id="modal-quote">Quote goes here...</div>
+
+                <div class="modal-actions">
+                    <button class="modal-nav-btn" id="modal-prev-btn">← Prev</button>
+                    <button class="modal-react-btn" id="modal-react-btn">
+                        <span>Send Love</span> 💜
+                    </button>
+                    <button class="modal-nav-btn" id="modal-next-btn">Next →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cinematic Flash & Blackout Transitions -->
+    <div id="magical-flash-overlay"></div>
+    <div id="cinematic-blackout"></div>
+    <div id="dim-wish-overlay"></div>
+
+    <!-- Scripts (Pure Frontend, zero external libraries) -->
+    <script src="js/sound.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/fireworks.js"></script>
+    <script src="js/memories-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

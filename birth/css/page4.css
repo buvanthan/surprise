@@ -1,0 +1,204 @@
+/* ==========================================================================
+   PAGE 4: THE EMOTIONAL MESSAGE
+   Theme: Deep Navy + Royal Purple + Gold
+   ========================================================================== */
+
+#page-4 {
+    background: radial-gradient(ellipse at 50% 35%, #130a2a 0%, #080616 60%, #03020a 100%);
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding-top: 75px;
+    padding-bottom: 60px;
+}
+
+/* Soft celestial moon / light aura behind the text */
+.celestial-aura {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.12) 0%, rgba(168, 85, 247, 0.1) 45%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+    animation: pulseCelestial 7s ease-in-out infinite alternate;
+}
+
+@keyframes pulseCelestial {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.85; }
+}
+
+.page4-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Glowing Pulsing Golden Heart */
+.emotional-heart-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.emotional-heart-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, rgba(255, 42, 133, 0.3) 50%, transparent 70%);
+    filter: blur(18px);
+    border-radius: 50%;
+    animation: heartGlowPulse 2.4s ease-in-out infinite alternate;
+}
+
+.emotional-heart {
+    position: relative;
+    font-size: 3.2rem;
+    z-index: 2;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+    animation: gentleHeartbeat 2.4s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.emotional-heart:hover {
+    transform: scale(1.2);
+}
+
+@keyframes gentleHeartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.12); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.18); }
+    70% { transform: scale(1); }
+}
+
+@keyframes heartGlowPulse {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.9; }
+}
+
+/* ==========================================================================
+   CINEMATIC EMOTIONAL LETTER
+   ========================================================================== */
+
+.page4-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: #ffd700;
+    line-height: 1.3;
+    margin-bottom: 28px;
+    text-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.letter-box {
+    position: relative;
+    width: 100%;
+    background: rgba(22, 14, 45, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: 24px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    margin-bottom: 35px;
+}
+
+.typewriter-line {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.typewriter-line.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+.typewriter-line.highlight {
+    font-family: var(--font-script);
+    font-size: clamp(1.5rem, 3.2vw, 2rem);
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+
+.typewriter-line.closing-smile {
+    font-size: clamp(1.25rem, 2.8vw, 1.5rem);
+    color: #ff758f;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+/* ==========================================================================
+   FINAL SURPRISE REVEAL PROMPT & BUTTON
+   ========================================================================== */
+
+.page4-actions-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.page4-actions-container.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.page4-teaser-question {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.royal-gold-btn {
+    background: linear-gradient(135deg, #ffd700 0%, #f59e0b 50%, #d97706 100%);
+    color: #120422;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4),
+                0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.royal-gold-btn:hover {
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.65),
+                0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+    #page-4 {
+        padding-top: 65px;
+    }
+    .letter-box {
+        padding: 24px 18px;
+    }
+}
